@@ -1,0 +1,29 @@
+name: Validate Static Site
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: JavaScript syntax
+        run: node --check assets/app.js
+      - name: Project metadata JSON
+        run: node -e "JSON.parse(require('fs').readFileSync('project-meta.json','utf8')); console.log('project-meta.json OK')"
+      - name: Required files
+        run: |
+          test -f index.html
+          test -f assets/styles.css
+          test -f assets/app.js
+          test -f README.md
+          test -f REQUIREMENTS.md
+          test -f PROJECT_LEARNINGS.md
