@@ -1,0 +1,9 @@
+{
+  "project": "tarkov-field-manual",
+  "schemaVersion": 1,
+  "guideVersion": "1.11.0",
+  "profiles": ["STATIC", "TOOL", "PUBLIC-CONTENT"],
+  "contentCheckedAt": "2026-08-31",
+  "gameVersion": "1.0.5.0.45581",
+  "visualAmbition": "baseline"
+}
