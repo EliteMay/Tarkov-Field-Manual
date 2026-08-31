@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Escape from Tarkov初心者大全。死亡ロス、PMC/SCAV、脱出、FIR、回復、弾、防具、保険、タスク、トレーダー、Hideout、金策まで優先順に解説。">
+  <meta name="theme-color" content="#11130f">
+  <title>初心者大全 — Tarkov Field Manual</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+
+  <header class="topbar">
+    <div class="brand-block">
+      <div class="eyebrow">BEGINNER COMPLETE GUIDE</div>
+      <a class="brand" href="index.html" aria-label="Tarkov Field Manual トップへ">
+        <span class="brand-mark" aria-hidden="true">TF</span>
+        <span><strong>TARKOV FIELD MANUAL</strong><small>初心者大全</small></span>
+      </a>
+    </div>
+    <div class="top-actions">
+      <label class="search-box" for="site-search">
+        <span aria-hidden="true">⌕</span>
+        <input id="site-search" type="search" placeholder="保険、FIR、SCAV、タスク…" autocomplete="off">
+        <kbd>/</kbd>
+      </label>
+      <button class="ghost-button" id="reset-progress" type="button">進捗をリセット</button>
+    </div>
+  </header>
+
+  <div class="app-shell" id="top">
+    <aside class="sidebar" aria-label="初心者大全ナビゲーション">
+      <section class="stage-panel">
+        <div class="stage-label">このページの使い方</div>
+        <div class="stage-value"><span class="status-dot"></span> 1 → 4 の順に読む</div>
+        <p>全部暗記しない。今の段階だけ読んで、実戦で困ったら検索する。</p>
+      </section>
+
+      <nav class="section-nav">
+        <a href="index.html">← 基礎トップ</a>
+        <a href="#roadmap">学習ロードマップ</a>
+        <a href="#loss">死んだら何を失う？</a>
+        <a href="#raid-status">脱出結果 / FIR</a>
+        <a href="#pmc-scav">PMC / SCAV</a>
+        <a href="#loadout">最初の装備</a>
+        <a href="#medical-deep">回復の詳しい使い分け</a>
+        <a href="#food">水分・エネルギー・重量</a>
+        <a href="#ammo-deep">弾・防具の詳しい考え方</a>
+        <a href="#weapon">銃・故障・カスタム</a>
+        <a href="#audio">音と移動</a>
+        <a href="#maps-deep">マップの覚え方</a>
+        <a href="#scav-karma">SCAVカルマ</a>
+        <a href="#insurance">保険</a>
+        <a href="#loot">漁り・持ち帰り</a>
+        <a href="#stash">スタッシュ整理</a>
+        <a href="#traders">トレーダー</a>
+        <a href="#quests">タスク</a>
+        <a href="#hideout">Hideout</a>
+        <a href="#money">金策</a>
+        <a href="#habits">初心者の習慣</a>
+        <a href="#sources">情報源</a>
+      </nav>
+
+      <section class="progress-panel" aria-live="polite">
+        <div class="progress-head"><span>初心者大全</span><strong id="progress-text">0 / 0</strong></div>
+        <div class="progress-track"><span id="progress-bar"></span></div>
+        <small>重要項目を理解したら「覚えた」。</small>
+      </section>
+    </aside>
+
+    <main id="main" class="content">
+      <section class="hero searchable-section" data-title="初心者大全 完全ガイド 入門">
+        <div class="hero-copy">
+          <div class="section-kicker">BEGINNER COMPLETE GUIDE</div>
+          <h1>タルコフ初心者が<br><em>最初から知っておくべきこと</em>を順番に。</h1>
+          <p class="lead">「何を持っていけばいい？」「死んだら全部消える？」「このアイテム売っていい？」「SCAVを撃っていい？」を、レベルに合わせて解決するページです。</p>
+          <div class="hero-meta"><span>確認日 2026-08-31</span><span>EFT 1.0.5.0.45581</span><span>初心者 → Lv15+</span></div>
+        </div>
+        <div class="priority-board" aria-label="このページの優先順位">
+          <div class="priority-row"><span class="priority-no">1</span><div><strong>まず生還ルール</strong><small>死亡ロス・脱出・回復を理解</small></div></div>
+          <div class="priority-row"><span class="priority-no">2</span><div><strong>次に資産を守る</strong><small>SCAV・保険・FIR・売却判断</small></div></div>
+          <div class="priority-row"><span class="priority-no">3</span><div><strong>Lv15まで進行</strong><small>タスク・トレーダー・Hideout</small></div></div>
+        </div>
+      </section>
+
+      <section id="roadmap" class="manual-section searchable-section" data-title="ロードマップ レベル 1 5 15 初心者 順番">
+        <div class="section-heading"><div><span class="section-kicker">ROADMAP</span><h2>何をいつ覚えるか</h2></div><button class="mastery-button" type="button" data-check-id="begin-roadmap">覚えた</button></div>
+        <div class="map-plan">
+          <div class="map-stage active"><span>最初の5レイド</span><strong>帰る・治す</strong><p>2×O、主要脱出1つ、重出血、HP回復、SCAVでの生還を最優先。</p></div>
+          <div class="map-stage"><span>Lv1〜5</span><strong>装備とロスを理解</strong><p>Secure Container、FIR、保険、弾の貫通、ヘッドセット、タスク受注を覚える。</p></div>
+          <div class="map-stage"><span>Lv5〜14</span><strong>タスク中心でLv15へ</strong><p>タスクは経験値とTrader Repの主要源。売却だけでレベルを上げようとしない。</p></div>
+          <div class="map-stage"><span>Lv15+</span><strong>Fleaを道具として使う</strong><p>市場で選択肢は増えるが、装備を高級化する前に弾・マップ・生還率を優先。</p></div>
+        </div>
+      </section>
+
+      <section id="loss" class="manual-section searchable-section" data-title="死ぬ 死亡 ロスト 装備 失う secure container PMC">
+        <div class="section-heading"><div><span class="section-kicker">DEATH & LOSS</span><h2>死んだら何を失う？</h2></div><button class="mastery-button" type="button" data-check-id="begin-loss">覚えた</button></div>
+        <div class="compare-table">
+          <div class="compare-head"><span></span><strong>死亡しても残る</strong><strong>失う可能性がある</strong></div>
+          <div><span>PMC</span><p>スタッシュ内、Secure Container内、装備スロットのSecure Container・近接武器等</p><p>持ち込んだ銃、防具、リグ、バッグ、ヘルメット、装備中の物資</p></div>
+          <div><span>SCAV</span><p>PMCのスタッシュは無傷</p><p>そのSCAVが持っていた装備と拾った物。生還すればスタッシュへ移せる</p></div>
+        </div>
+        <div class="info-grid two-col">
+          <article class="info-block"><h3>Secure Container</h3><p>中身は死亡しても失わない安全枠。高価品だけでなく、鍵・予備薬・必要な弾など「死んでも次のレイドで必要」な物を優先する。</p></article>
+          <article class="info-block"><h3>Gear Fearを減らす</h3><p>装備は使わなければスタッシュを圧迫するだけ。初心者は「なくしても2〜3回組み直せる価格」の装備を基準にする。</p></article>
+        </div>
+        <article class="callout"><div class="callout-mark">KEY</div><div><strong>高い装備を持つことより、同じ構成を何回も出せることが強い。</strong><p>死亡1回で資金が尽きる装備は、今の自分には高すぎる可能性があります。</p></div></article>
+      </section>
+
+      <section id="raid-status" class="manual-section searchable-section" data-title="Survived Run Through FIR Found in Raid KIA MIA 脱出結果">
+        <div class="section-heading"><div><span class="section-kicker">RAID STATUS</span><h2>Survived / Run Through / FIR</h2></div><button class="mastery-button" type="button" data-check-id="begin-fir">覚えた</button></div>
+        <div class="economy-lines">
+          <article><h3>Survived</h3><p>通常の生還。レイドで拾った対象アイテムのFound in Raid（FIR）を維持する基本条件。</p></article>
+          <article><h3>Run Through</h3><p>早すぎる脱出などで付く状態。FIRを失う。現行Wikiの基準は、200 EXP以上を得るか、レイド開始から7分以上経過して脱出すること。</p></article>
+          <article><h3>KIA / MIA</h3><p>KIAは死亡。MIAは時間切れなど。特にMIAでは保険の扱いにも注意が必要。</p></article>
+          <article><h3>Found in Raid</h3><p>タスクで「レイド内で発見」が必要なアイテムに重要。PMCがレイドへ持ち込んだ物はFIRを失う。HideoutでCraftした物やQuest報酬もFIRになる。</p></article>
+        </div>
+        <article class="callout callout-warn"><div class="callout-mark">!</div><div><strong>タスク品を拾ったら「高い物をもう少し探す」より帰る判断も強い。</strong><p>FIR指定品は死亡やRun Throughで価値が大きく変わります。</p></div></article>
+      </section>
+
+      <section id="pmc-scav" class="manual-section searchable-section" data-title="PMC SCAV 違い 使い分け スカブ 練習">
+        <div class="section-heading"><div><span class="section-kicker">PMC / SCAV</span><h2>2つのキャラをどう使い分ける？</h2></div><button class="mastery-button" type="button" data-check-id="begin-pmc-scav">覚えた</button></div>
+        <div class="compare-table">
+          <div class="compare-head"><span></span><strong>PMC</strong><strong>SCAV</strong></div>
+          <div><span>成長</span><p>メインのレベル、スキル、タスクが進む</p><p>SCAV側の成長は別。PMCタスク進行の中心ではない</p></div>
+          <div><span>装備</span><p>自分で用意して持ち込む</p><p>ランダム装備で開始</p></div>
+          <div><span>おすすめ用途</span><p>タスク、経験値、目的のあるレイド</p><p>金策、マップ確認、出口練習、アイテム回収</p></div>
+          <div><span>初心者の比率</span><p>「タスク1つだけ」など短い目標で出る</p><p>使えるたびに練習として回してもよい</p></div>
+        </div>
+        <div class="mini-rules"><p><strong>SCAVで覚えた出口がPMCでも使えるとは限らない。</strong>毎回2×O。</p><p><strong>SCAVでPMCを探しに行く必要はない。</strong>最初は生還して物資を持ち帰るだけで十分。</p></div>
+      </section>
+
+      <section id="loadout" class="manual-section searchable-section" data-title="装備 初心者 ロードアウト ヘッドセット 防具 銃 バッグ リグ">
+        <div class="section-heading"><div><span class="section-kicker">FIRST LOADOUT</span><h2>初心者装備の優先順位</h2></div><button class="mastery-button" type="button" data-check-id="begin-loadout">覚えた</button></div>
+        <div class="medical-priority">
+          <div class="medical-step"><span>1</span><div><strong>まともな弾 + 動く銃</strong><p>高級カスタムより、入手しやすい弾と信頼できる耐久の銃。</p></div></div>
+          <div class="medical-step"><span>2</span><div><strong>ヘッドセット</strong><p>足音など小さい音を聞きやすくする。情報量を増やす装備として優先度が高い。</p></div></div>
+          <div class="medical-step"><span>3</span><div><strong>重出血 + HP回復</strong><p>最低限の医療をホットキーへ。薬を全部バッグの奥に入れない。</p></div></div>
+          <div class="medical-step"><span>4</span><div><strong>防具・リグ・バッグ</strong><p>予算に合わせて。防具はクラスだけでなく保護範囲と耐久を見る。</p></div></div>
+        </div>
+        <div class="rule-list">
+          <div><span class="rule-tag">BUDGET</span><p>1回の死亡で「もうPMCに行けない」金額を使わない。</p></div>
+          <div><span class="rule-tag">AMMO</span><p>予備弾は全部リグへ出さず、一部をSecure Containerに入れると死亡時の損失を減らせる。</p></div>
+          <div><span class="rule-tag">MEDS</span><p>止血・回復はすぐ押せる位置に。手術キットは長いので戦闘中の最優先ではない。</p></div>
+        </div>
+      </section>
+
+      <section id="medical-deep" class="manual-section searchable-section" data-title="回復 医療 軽出血 重出血 骨折 黒部位 CMS Surv12 painkiller">
+        <div class="section-heading"><div><span class="section-kicker">MEDICAL DEEP DIVE</span><h2>回復アイテムは役割で覚える</h2></div><button class="mastery-button" type="button" data-check-id="begin-medical-deep">覚えた</button></div>
+        <div class="info-grid two-col">
+          <article class="info-block"><h3>重出血</h3><p>Esmarch / CAT / CALOK-Bなどの止血手段。通常回復だけを連打しても出血を放置すると削られ続ける。</p></article>
+          <article class="info-block"><h3>軽出血</h3><p>Bandage系など。重出血より緊急度は低いが、長時間放置しない。</p></article>
+          <article class="info-block"><h3>通常HP回復</h3><p>AI-2 / Car / Salewa / IFAK / AFAKなど。アイテムごとにHP量や止血対応が異なるので、万能だと思わない。</p></article>
+          <article class="info-block"><h3>骨折</h3><p>Splint系。移動に影響する。痛み止めは症状を無視しやすくするだけで、骨折を治したことにはならない。</p></article>
+          <article class="info-block"><h3>黒い腕・脚・腹</h3><p>CMS / Surv12で復旧可能。復旧後は最大HPが低下する。手術直後は1HPなので追加回復が必要。</p></article>
+          <article class="info-block"><h3>黒い頭・胸</h3><p>手術キットでは復旧できない。頭・胸部が破壊される直接ダメージは致命的。</p></article>
+        </div>
+        <div class="sell-rule"><strong>実戦の順番</strong><p>遮蔽へ移動 → 重出血 → 致命部位のHP → 移動不能級の骨折/黒脚 → 軽出血 → 通常回復 → 安全なら手術。</p></div>
+        <p class="muted-note">レイド後のTherapist治療は、PMC Lv10以下かつ30レイド以下では無料になる初心者条件があります。</p>
+      </section>
+
+      <section id="food" class="manual-section searchable-section" data-title="水分 hydration energy エネルギー 脱水 重量 overweight stamina スタミナ">
+        <div class="section-heading"><div><span class="section-kicker">BODY MANAGEMENT</span><h2>水分・エネルギー・重量もHP</h2></div><button class="mastery-button" type="button" data-check-id="begin-body">覚えた</button></div>
+        <div class="combat-grid">
+          <article><span>H2O</span><h3>Hydration</h3><p>0になると脱水状態になり、継続ダメージなどが発生する。長いレイド前は数値を見る。</p></article>
+          <article><span>EN</span><h3>Energy</h3><p>0でFatigue状態になり継続ダメージ。食料は拾ったら効果を確認して使う。</p></article>
+          <article><span>KG</span><h3>Overweight</h3><p>重くなるほど音・スタミナ・速度・ジャンプなどが悪化する。欲張って持ちすぎると帰れなくなる。</p></article>
+          <article><span>STA</span><h3>Stamina</h3><p>安全地帯で回復する。敵がいそうな場所へゼロスタミナで入らない。</p></article>
+        </div>
+        <article class="callout"><div class="callout-mark">EXIT</div><div><strong>バッグがいっぱい = まだ漁る、ではない。</strong><p>価値ある物が揃い、重量で動きが悪くなったら脱出へ向かうタイミングです。</p></div></article>
+      </section>
+
+      <section id="ammo-deep" class="manual-section searchable-section" data-title="弾 防具 ammo armor penetration damage flesh plate durability class">
+        <div class="section-heading"><div><span class="section-kicker">AMMO & ARMOR DEEP DIVE</span><h2>「銃」ではなく「弾がダメージを決める」</h2></div><button class="mastery-button" type="button" data-check-id="begin-ammo-deep">覚えた</button></div>
+        <div class="info-grid two-col">
+          <article class="info-block"><h3>Damage</h3><p>人体へ通ったときの基本ダメージ。銃の価格ではなく弾そのものが持つ。</p></article>
+          <article class="info-block"><h3>Penetration</h3><p>防具を抜く能力。防具クラス、残り耐久、弾のPenによって貫通確率が変わる。</p></article>
+          <article class="info-block"><h3>Armor Zone</h3><p>防具は全身を守らない。顔・脇など保護されない弱点があり、同じクラスでも保護範囲が違う。</p></article>
+          <article class="info-block"><h3>Durability</h3><p>現在耐久が低い防具ほど防護力が落ちる。修理後の「45/45」でも元最大耐久が60なら新品同等ではない。</p></article>
+          <article class="info-block"><h3>Plate + Soft Armor</h3><p>プレート対応装備は、どのプレートが入っているかまで確認。外見だけでクラスを決めつけない。</p></article>
+          <article class="info-block"><h3>Leg Meta</h3><p>高肉ダメージ・低貫通弾なら、装甲の薄い/ない部位を狙う戦い方が成立する。高貫通弾と狙い方を混同しない。</p></article>
+        </div>
+        <a class="resource-link" href="https://escapefromtarkov.fandom.com/wiki/Ballistics" target="_blank" rel="noreferrer"><span>LIVE RESOURCE</span><strong>Official Wiki — Ballistics</strong><small>弾性能はアップデートで変わるため最新表を確認。</small></a>
+        <a class="resource-link" href="https://tarkov.dev/ammo" target="_blank" rel="noreferrer"><span>LIVE DATA</span><strong>Tarkov.dev — Ammo</strong><small>現在データの比較用。</small></a>
+      </section>
+
+      <section id="weapon" class="manual-section searchable-section" data-title="銃 武器 durability 故障 malfunction L Shift T ergonomics recoil カスタム">
+        <div class="section-heading"><div><span class="section-kicker">WEAPONS</span><h2>銃は「撃てる状態」を最優先</h2></div><button class="mastery-button" type="button" data-check-id="begin-weapon">覚えた</button></div>
+        <div class="rule-list">
+          <div><span class="rule-tag">DURABILITY</span><p>SCAVから拾った低耐久銃を、そのまま大事なPMCレイドの主力にしない。Conditionが悪い武器は精度や故障の問題につながる。</p></div>
+          <div><span class="rule-tag">MALFUNCTION</span><p>故障したらデフォルト <strong>L</strong> で武器を確認し、その後 <strong>Left Shift + T</strong> でトラブルシュート。Condition起因の機械的故障は耐久93%超では発生しない。</p></div>
+          <div><span class="rule-tag">ERGONOMICS</span><p>Ergoは扱いやすさ、Recoilは反動。初心者は最大性能ビルドより「安く、視認しやすいサイト、十分なErgo」の方が実戦向き。</p></div>
+          <div><span class="rule-tag">MAGAZINE</span><p>銃と同じ口径でもマガジン互換が必要。レイド前にマガジンを銃へ装填できるか確認。</p></div>
+        </div>
+        <article class="callout callout-warn"><div class="callout-mark">!</div><div><strong>「拾った銃だから無料」は半分だけ正しい。</strong><p>低耐久で当たらない・故障するなら、良い弾を失う原因になります。</p></div></article>
+      </section>
+
+      <section id="audio" class="manual-section searchable-section" data-title="音 足音 headset earpiece 聞く 移動 sprint walking CapsLock">
+        <div class="section-heading"><div><span class="section-kicker">AUDIO & MOVEMENT</span><h2>音はレーダー代わりの情報</h2></div><button class="mastery-button" type="button" data-check-id="begin-audio">覚えた</button></div>
+        <div class="combat-grid">
+          <article><span>01</span><h3>ヘッドセットを着ける</h3><p>Earpieceは足音など小さい音を増幅し、銃声などのImpulse noiseを抑える。モデルごとに音の傾向が違う。</p></article>
+          <article><span>02</span><h3>ずっと走らない</h3><p>自分のSprint音で相手の足音が聞こえにくくなる。移動区間と索敵区間を分ける。</p></article>
+          <article><span>03</span><h3>危険エリア前で聞く</h3><p>建物へ入る前、曲がり角、死体の近くなどで一度止まり、情報を取る。</p></article>
+          <article><span>04</span><h3>自分も聞かれている</h3><p>リロード、回復、バッグを漁る音も情報。安全確認なしで長い行動をしない。</p></article>
+        </div>
+      </section>
+
+      <section id="maps-deep" class="manual-section searchable-section" data-title="マップ Ground Zero Customs Woods Factory Streets 脱出 地雷">
+        <div class="section-heading"><div><span class="section-kicker">MAP LEARNING</span><h2>マップ暗記は「出口 → 目印 → 危険地帯」</h2></div><button class="mastery-button" type="button" data-check-id="begin-maps-deep">覚えた</button></div>
+        <div class="map-plan">
+          <div class="map-stage active"><span>BEGINNER</span><strong>Ground Zero</strong><p>Lv20以下では初心者側Matchmaking（Level &lt;21）に分かれる。地雷・Claymore・Border Sniperには注意。</p></div>
+          <div class="map-stage"><span>QUEST CORE</span><strong>Customs</strong><p>序盤タスクで訪れる機会が多い。川、Dorms、工場地帯など大きな目印から覚える。</p></div>
+          <div class="map-stage"><span>ORIENTATION</span><strong>Woods</strong><p>建物より地形で覚える。山、湖、道路、送電線など「遠くから見える物」を軸にする。</p></div>
+          <div class="map-stage"><span>LATER</span><strong>Factory / Streets / その他</strong><p>タスクで必要になったら覚える。最初から全マップを同時に勉強しない。</p></div>
+        </div>
+        <div class="mini-rules"><p><strong>1マップにつき最初に覚える出口は2つ。</strong></p><p><strong>スポーン地点を見て「自分は地図のどちら側か」を判断する練習。</strong></p><p><strong>出口までの一本道ではなく、途中の安全な待避場所も覚える。</strong></p></div>
+      </section>
+
+      <section id="scav-karma" class="manual-section searchable-section" data-title="SCAV karma Fence reputation 車脱出 coop traitor scav boss">
+        <div class="section-heading"><div><span class="section-kicker">SCAV KARMA</span><h2>SCAVで味方を撃つと損する</h2></div><button class="mastery-button" type="button" data-check-id="begin-scav-karma">覚えた</button></div>
+        <div class="settings-grid">
+          <div class="setting-row"><span>SCAVで生還 / Transit</span><strong>+0.01</strong><small>小さいが積み上がる</small></div>
+          <div class="setting-row"><span>Player SCAVを殺す</span><strong>-0.10</strong><small>相手がTraitorの場合は例外</small></div>
+          <div class="setting-row"><span>AI SCAVを殺す</span><strong>-0.03〜-0.05</strong><small>通常は避ける</small></div>
+          <div class="setting-row"><span>PMCでVehicle Extract</span><strong>初回 +0.20 / 場所ごと</strong><small>回数で報酬は低下</small></div>
+          <div class="setting-row"><span>Co-op Extract</span><strong>初回 +0.25 / 場所ごと</strong><small>PMC/SCAV協力脱出</small></div>
+          <div class="setting-row"><span>Fence Rep +6</span><strong>追加販売タブ</strong><small>30% discount。SCAV装備・Cooldown等にも評判が影響</small></div>
+        </div>
+        <article class="callout callout-warn"><div class="callout-mark">STOP</div><div><strong>SCAVで人影を見て即撃ちしない。</strong><p>見分けが付かない間は逃げる・声を出す・距離を取る方がカルマを守れます。</p></div></article>
+      </section>
+
+      <section id="insurance" class="manual-section searchable-section" data-title="保険 insurance Prapor Therapist MIA Labs 装備 帰ってくる">
+        <div class="section-heading"><div><span class="section-kicker">INSURANCE</span><h2>保険は「誰も持ち帰らなかった装備」が戻る</h2></div><button class="mastery-button" type="button" data-check-id="begin-insurance">覚えた</button></div>
+        <div class="info-grid two-col">
+          <article class="info-block"><h3>保険できる物</h3><p>主に武器・防具などGear。弾、医療、食料などConsumableは基本対象外。</p></article>
+          <article class="info-block"><h3>戻る条件</h3><p>レイドから誰にもExtractされなかった保険対象品が、遅れて返却される可能性がある。</p></article>
+          <article class="info-block"><h3>MIA注意</h3><p>時間切れでMIAになった場合、装備したままの保険品は戻らない。間に合わない場合に保険品を捨てる判断が使われる。</p></article>
+          <article class="info-block"><h3>対象外Location</h3><p>現行WikiではThe Lab、The Labyrinth、Icebreakerで失った物は保険回収されない。</p></article>
+        </div>
+        <p class="muted-note">バッグが保険でも、中に入っていた未保険のLootやConsumableまで一緒に戻るわけではありません。</p>
+      </section>
+
+      <section id="loot" class="manual-section searchable-section" data-title="漁り loot 持ち帰る 高価 ルーブル per slot task FIR">
+        <div class="section-heading"><div><span class="section-kicker">LOOTING</span><h2>何を拾う？ 何を捨てる？</h2></div><button class="mastery-button" type="button" data-check-id="begin-loot">覚えた</button></div>
+        <div class="medical-priority">
+          <div class="medical-step"><span>1</span><div><strong>今必要なFIRタスク品</strong><p>価格より優先。拾えたら生還価値が高い。</p></div></div>
+          <div class="medical-step"><span>2</span><div><strong>Hideoutで近いうちに使う物</strong><p>必要数を確認して保管。未来の全Upgrade分を抱え込まない。</p></div></div>
+          <div class="medical-step"><span>3</span><div><strong>高価値 / 1マス価値が高い物</strong><p>バッグ容量が少ないので「価格 ÷ マス数」の感覚を持つ。</p></div></div>
+          <div class="medical-step"><span>4</span><div><strong>自分が次に使う装備</strong><p>ヘッドセット、良い弾、医療など「買わずに済む物」も価値。</p></div></div>
+        </div>
+        <article class="callout"><div class="callout-mark">RULE</div><div><strong>「空きマスがあるから拾う」→「もっと良い物を見つけたら交換する」。</strong><p>最初から完璧な価値判断は不要です。</p></div></article>
+      </section>
+
+      <section id="stash" class="manual-section searchable-section" data-title="スタッシュ stash 整理 売る バッグ ケース 武器 分解">
+        <div class="section-heading"><div><span class="section-kicker">STASH</span><h2>スタッシュは「次の出撃を速くする場所」</h2></div><button class="mastery-button" type="button" data-check-id="begin-stash">覚えた</button></div>
+        <div class="rule-list">
+          <div><span class="rule-tag">KEEP</span><p>今使う医療、まともな弾、次の数タスクで必要なFIR品、近いHideout Upgrade素材。</p></div>
+          <div><span class="rule-tag">SELL</span><p>用途不明で再入手しやすい低価値品、使わない低耐久銃、同じ役割の装備の過剰在庫。</p></div>
+          <div><span class="rule-tag">SPACE</span><p>銃はマガジンやグリップを外すと小さくなる場合がある。バッグをバッグの中へ入れるNested storageも使える。</p></div>
+          <div><span class="rule-tag">LOADOUT</span><p>「医療エリア」「弾/マガジン」「防具」「売却待ち」をざっくり分けると次のPMC準備が速い。</p></div>
+        </div>
+        <div class="sell-rule"><strong>初心者の判断基準</strong><p>「いつか使うかも」ではなく、<strong>次の5〜10レイドで使うか</strong>。使わないなら売って資金と空間へ変える。</p></div>
+      </section>
+
+      <section id="traders" class="manual-section searchable-section" data-title="Trader Prapor Therapist Fence Skier Peacekeeper Mechanic Ragman Jaeger 売却">
+        <div class="section-heading"><div><span class="section-kicker">TRADERS</span><h2>トレーダーは店 + 進行システム</h2></div><button class="mastery-button" type="button" data-check-id="begin-traders">覚えた</button></div>
+        <div class="terms-grid">
+          <div><dt>Prapor</dt><dd>ロシア系武器・弾・Gear。保険サービスも担当。序盤タスクの中心の1人。</dd></div>
+          <div><dt>Therapist</dt><dd>医療・回復・一部物資。レイド後治療。医療系タスクも多い。</dd></div>
+          <div><dt>Fence</dt><dd>SCAV Karmaと連動。何でも買うが、他Traderの方が高く買う物も多い。</dd></div>
+          <div><dt>Skier</dt><dd>武器パーツや装備、序盤から続くタスクライン。</dd></div>
+          <div><dt>Peacekeeper</dt><dd>西側系装備・弾・武器。主にUSDを使う。</dd></div>
+          <div><dt>Mechanic</dt><dd>武器・パーツ、Gunsmith系タスク。銃器売却先として確認する価値が高い。</dd></div>
+          <div><dt>Ragman</dt><dd>防具、リグ、バッグなど装備系。</dd></div>
+          <div><dt>Jaeger</dt><dd>狩猟系武器・サバイバル用品と独特なタスク。Unlock後に利用。</dd></div>
+        </div>
+        <p class="muted-note">Loyalty LevelはPMC LevelだけでなくTrader Reputationや取引額なども条件になる。タスクを無視すると後で装備購入が詰まりやすい。</p>
+      </section>
+
+      <section id="quests" class="manual-section searchable-section" data-title="タスク quest task experience XP trader reputation daily operational level 5">
+        <div class="section-heading"><div><span class="section-kicker">QUESTS</span><h2>Lv15まではタスクが最重要の成長源</h2></div><button class="mastery-button" type="button" data-check-id="begin-quests">覚えた</button></div>
+        <div class="info-grid two-col">
+          <article class="info-block"><h3>なぜタスク？</h3><p>Questは大量のEXP、Trader Reputation、Money、Items、購入Unlockを得られる。Wikiでも最速級のEXP源と説明される。</p></article>
+          <article class="info-block"><h3>受け忘れ注意</h3><p>Trader iconの緑チェックを確認。対象QuestがActiveでないと専用Quest Itemが出ないケースもある。</p></article>
+          <article class="info-block"><h3>1レイド1目的</h3><p>「Task itemを取る」「Scavを倒す」「出口を覚える」を全部同時にしない。初心者ほど目的を1〜2個へ絞る。</p></article>
+          <article class="info-block"><h3>Daily</h3><p>Daily Operational TaskはPMC Lv5から利用可能。内容と報酬を見て、無理に全部やらなくていい。</p></article>
+        </div>
+        <a class="resource-link" href="https://tarkov.dev/tasks" target="_blank" rel="noreferrer"><span>TASK DATA</span><strong>Tarkov.dev — Tasks</strong><small>必要アイテム・鍵・Mapなどを確認。</small></a>
+      </section>
+
+      <section id="hideout" class="manual-section searchable-section" data-title="Hideout 隠れ家 craft medstation workbench generator FIR upgrade">
+        <div class="section-heading"><div><span class="section-kicker">HIDEOUT</span><h2>Hideoutは「後回し」ではなく進行補助</h2></div><button class="mastery-button" type="button" data-check-id="begin-hideout">覚えた</button></div>
+        <div class="economy-lines">
+          <article><h3>Medstation</h3><p>医療品のCraftやHealth回復性能に関わる。Lv1でもAI-2、CALOK-B、Salewa、CMSなどをCraftできる。</p></article>
+          <article><h3>Workbench</h3><p>弾や武器関連Craftの入口。今後の装備調達に影響。</p></article>
+          <article><h3>Generator</h3><p>多くのCraft開始に電源が必要。燃料コストがあるため「何のために回すか」を決める。</p></article>
+          <article><h3>Craft = FIR</h3><p>HideoutでCraftしたアイテムはFIRになるため、一部タスク品の確保にも使える。</p></article>
+        </div>
+        <div class="sell-rule"><strong>素材を全部保存しない</strong><p>今作れるModuleと「次の1段階」に必要な物を優先。何十レベルも先の素材でスタッシュを埋めない。</p></div>
+      </section>
+
+      <section id="money" class="manual-section searchable-section" data-title="金策 money rouble ruble flea market level 15 SCAV 売却">
+        <div class="section-heading"><div><span class="section-kicker">MONEY</span><h2>初心者の金策は「高額Loot」より黒字レイド</h2></div><button class="mastery-button" type="button" data-check-id="begin-money">覚えた</button></div>
+        <div class="combat-grid">
+          <article><span>01</span><h3>SCAVで持ち帰る</h3><p>スタッシュ装備を失うリスクなし。高額品1個より、毎回生還して売れる物を積む。</p></article>
+          <article><span>02</span><h3>PMC装備を安定化</h3><p>毎回違う高い銃を買わず、同じBudget装備を回せるようにする。</p></article>
+          <article><span>03</span><h3>Trader売却を使う</h3><p>Lv15前でもTraderへ売れる。売却はTrader取引額を増やす意味もある。</p></article>
+          <article><span>04</span><h3>Lv15でFlea</h3><p>PMC Lv15から自分のOfferを出せる。価格だけでなく手数料・FIR・出品制限を考える。</p></article>
+        </div>
+        <article class="callout"><div class="callout-mark">GOAL</div><div><strong>「1レイドで50万」より「5レイド連続で装備代を回収」の方が初心者には強い。</strong><p>生還率が上がるほどタスク・経験値・FIR・資金が全部同時に改善します。</p></div></article>
+      </section>
+
+      <section id="habits" class="manual-section searchable-section" data-title="初心者 習慣 チェック リプレイ 死因 生還 目標">
+        <div class="section-heading"><div><span class="section-kicker">GOOD HABITS</span><h2>上達が速くなる10個の習慣</h2></div></div>
+        <div class="check-grid">
+          <button class="check-item" type="button" data-check-id="habit-extract"><span class="check-box"></span><span><strong>スポーン直後に2×O</strong><small>出口を最初に確認</small></span></button>
+          <button class="check-item" type="button" data-check-id="habit-ammo"><span class="check-box"></span><span><strong>使う弾を1種類覚える</strong><small>全口径暗記しない</small></span></button>
+          <button class="check-item" type="button" data-check-id="habit-med"><span class="check-box"></span><span><strong>重出血薬をHotkey</strong><small>バッグの奥に置かない</small></span></button>
+          <button class="check-item" type="button" data-check-id="habit-scav"><span class="check-box"></span><span><strong>SCAVは生還優先</strong><small>無理なPvPをしない</small></span></button>
+          <button class="check-item" type="button" data-check-id="habit-task"><span class="check-box"></span><span><strong>PMCは1〜2目的</strong><small>欲張らない</small></span></button>
+          <button class="check-item" type="button" data-check-id="habit-sound"><span class="check-box"></span><span><strong>危険地帯前で一度止まる</strong><small>音を聞く</small></span></button>
+          <button class="check-item" type="button" data-check-id="habit-cover"><span class="check-box"></span><span><strong>遮蔽から遮蔽へ</strong><small>開けた場所を長く走らない</small></span></button>
+          <button class="check-item" type="button" data-check-id="habit-exit"><span class="check-box"></span><span><strong>バッグが埋まったら帰る</strong><small>利益を確定する</small></span></button>
+          <button class="check-item" type="button" data-check-id="habit-death"><span class="check-box"></span><span><strong>死亡原因を1個だけ決める</strong><small>毎回全部反省しない</small></span></button>
+          <button class="check-item" type="button" data-check-id="habit-repeat"><span class="check-box"></span><span><strong>同じ装備を反復</strong><small>銃の感覚を固定する</small></span></button>
+        </div>
+      </section>
+
+      <section id="sources" class="sources searchable-section" data-title="source 出典 wiki tarkov dev 更新 情報源">
+        <div class="section-heading"><div><span class="section-kicker">SOURCES</span><h2>このページの現行情報</h2></div></div>
+        <p>確認日: 2026-08-31。具体的な弾性能・価格・Quest条件はゲーム更新で変わるため、リンク先の最新値を優先してください。</p>
+        <ul>
+          <li><a href="https://escapefromtarkov.fandom.com/wiki/Escape_from_Tarkov_Wiki" target="_blank" rel="noreferrer">Official Escape from Tarkov Wiki — Current version</a></li>
+          <li><a href="https://escapefromtarkov.fandom.com/wiki/Health_system" target="_blank" rel="noreferrer">Health system</a></li>
+          <li><a href="https://escapefromtarkov.fandom.com/wiki/Ballistics" target="_blank" rel="noreferrer">Ballistics</a></li>
+          <li><a href="https://escapefromtarkov.fandom.com/wiki/Scavs" target="_blank" rel="noreferrer">Scavs / Scav karma</a></li>
+          <li><a href="https://escapefromtarkov.fandom.com/wiki/Insurance" target="_blank" rel="noreferrer">Insurance</a></li>
+          <li><a href="https://escapefromtarkov.fandom.com/wiki/Found_in_raid" target="_blank" rel="noreferrer">Found in raid</a></li>
+          <li><a href="https://escapefromtarkov.fandom.com/wiki/Trading" target="_blank" rel="noreferrer">Trading / Flea Market</a></li>
+          <li><a href="https://escapefromtarkov.fandom.com/wiki/Quests" target="_blank" rel="noreferrer">Quests</a></li>
+          <li><a href="https://escapefromtarkov.fandom.com/wiki/Hideout" target="_blank" rel="noreferrer">Hideout</a></li>
+          <li><a href="https://escapefromtarkov.fandom.com/wiki/Weapon_malfunctions" target="_blank" rel="noreferrer">Weapon malfunctions</a></li>
+          <li><a href="https://escapefromtarkov.fandom.com/wiki/Earpieces" target="_blank" rel="noreferrer">Earpieces</a></li>
+          <li><a href="https://escapefromtarkov.fandom.com/wiki/Ground_Zero" target="_blank" rel="noreferrer">Ground Zero</a></li>
+          <li><a href="https://tarkov.dev/" target="_blank" rel="noreferrer">Tarkov.dev — live item/task data</a></li>
+        </ul>
+        <div class="source-foot">Fan-made personal guide. Escape from Tarkov / Battlestate Games とは非公式・非提携です。</div>
+      </section>
+
+      <div class="no-results" id="no-results" hidden><strong>該当する項目がありません。</strong><span>別の言葉で検索してください。</span></div>
+    </main>
+  </div>
+
+  <footer class="site-footer"><span>Tarkov Field Manual — Beginner Complete Guide</span><span>Guide data checked: 2026-08-31</span></footer>
+  <script src="assets/app.js" defer></script>
+</body>
+</html>

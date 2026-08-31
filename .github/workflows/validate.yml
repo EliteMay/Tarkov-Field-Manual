@@ -22,8 +22,16 @@ jobs:
       - name: Required files
         run: |
           test -f index.html
+          test -f beginner.html
           test -f assets/styles.css
           test -f assets/app.js
           test -f README.md
           test -f REQUIREMENTS.md
           test -f PROJECT_LEARNINGS.md
+      - name: Beginner guide contract
+        run: |
+          grep -q 'BEGINNER COMPLETE GUIDE' beginner.html
+          grep -q 'id="scav-karma"' beginner.html
+          grep -q 'id="insurance"' beginner.html
+          grep -q 'id="quests"' beginner.html
+          grep -q 'beginner.html' assets/app.js
