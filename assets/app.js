@@ -2,6 +2,17 @@
   'use strict';
 
   const STORAGE_KEY = 'tarkov-field-manual:progress:v1';
+  const nav = document.querySelector('.section-nav');
+  const onBeginnerGuide = /\/beginner\.html$/.test(window.location.pathname);
+
+  if (nav && !onBeginnerGuide) {
+    const beginnerLink = document.createElement('a');
+    beginnerLink.href = 'beginner.html';
+    beginnerLink.className = 'guide-jump-link';
+    beginnerLink.textContent = '初心者大全 →';
+    nav.prepend(beginnerLink);
+  }
+
   const checkables = [...document.querySelectorAll('[data-check-id]')];
   const search = document.getElementById('site-search');
   const sections = [...document.querySelectorAll('.searchable-section')];
@@ -85,7 +96,7 @@
       section.classList.toggle('search-hidden', !match);
       if (match) visible += 1;
     });
-    noResults.hidden = visible !== 0;
+    if (noResults) noResults.hidden = visible !== 0;
   }
 
   search?.addEventListener('input', event => runSearch(event.target.value));
@@ -104,7 +115,10 @@
 
   if ('IntersectionObserver' in window) {
     const targetSections = navLinks
-      .map(link => document.querySelector(link.getAttribute('href')))
+      .map(link => {
+        const href = link.getAttribute('href') || '';
+        return href.startsWith('#') ? document.querySelector(href) : null;
+      })
       .filter(Boolean);
 
     const observer = new IntersectionObserver(entries => {
