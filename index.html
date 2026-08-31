@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Escape from Tarkov初心者向け。生還、回復、弾・防具、SCAV、脱出、設定、操作を優先順に覚える個人用フィールドマニュアル。">
+  <meta name="theme-color" content="#11130f">
+  <title>Tarkov Field Manual — 初心者生存手帳</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+
+  <header class="topbar">
+    <div class="brand-block">
+      <div class="eyebrow">PERSONAL FIELD MANUAL</div>
+      <a class="brand" href="#top" aria-label="Tarkov Field Manual トップへ">
+        <span class="brand-mark" aria-hidden="true">TF</span>
+        <span>
+          <strong>TARKOV FIELD MANUAL</strong>
+          <small>初心者生存手帳</small>
+        </span>
+      </a>
+    </div>
+
+    <div class="top-actions">
+      <label class="search-box" for="site-search">
+        <span aria-hidden="true">⌕</span>
+        <input id="site-search" type="search" placeholder="弾、出血、保険、設定…" autocomplete="off">
+        <kbd>/</kbd>
+      </label>
+      <button class="ghost-button" id="reset-progress" type="button">進捗をリセット</button>
+    </div>
+  </header>
+
+  <div class="app-shell" id="top">
+    <aside class="sidebar" aria-label="サイト内ナビゲーション">
+      <section class="stage-panel">
+        <div class="stage-label">現在の段階</div>
+        <div class="stage-value"><span class="status-dot"></span> BEGINNER / 生還優先</div>
+        <p>知識を増やすより、まず「帰れる・治せる・弾を選べる」を固める。</p>
+      </section>
+
+      <nav class="section-nav">
+        <a href="#start">最初に覚える</a>
+        <a href="#raid-ready">出撃前</a>
+        <a href="#medical">回復</a>
+        <a href="#ammo">弾・防具</a>
+        <a href="#combat">撃ち合い</a>
+        <a href="#maps">マップ・脱出</a>
+        <a href="#scav">SCAV / PMC</a>
+        <a href="#economy">お金・装備</a>
+        <a href="#settings">おすすめ設定</a>
+        <a href="#controls">操作</a>
+        <a href="#terms">用語</a>
+      </nav>
+
+      <section class="progress-panel" aria-live="polite">
+        <div class="progress-head">
+          <span>基礎の習得</span>
+          <strong id="progress-text">0 / 0</strong>
+        </div>
+        <div class="progress-track"><span id="progress-bar"></span></div>
+        <small>「覚えた」を押すとこの端末に保存されます。</small>
+      </section>
+    </aside>
+
+    <main id="main" class="content">
+      <section id="start" class="hero searchable-section" data-title="最初に覚える 初心者">
+        <div class="hero-copy">
+          <div class="section-kicker">START HERE</div>
+          <h1>今は「強い装備」より<br><em>生還率を上げる知識</em>を覚える。</h1>
+          <p class="lead">タルコフは、撃ち合いだけ上手くても帰れないゲーム。最初は <strong>脱出・回復・弾・SCAV</strong> の4つを先に覚えると一気に楽になります。</p>
+          <div class="hero-meta">
+            <span>確認日 2026-08-31</span>
+            <span>EFT 1.0.5.0.45581 基準</span>
+            <span>初心者向け</span>
+          </div>
+        </div>
+
+        <div class="priority-board" aria-label="最重要3項目">
+          <div class="priority-row">
+            <span class="priority-no">01</span>
+            <div><strong>帰り道を先に決める</strong><small>スポーン → 2×O → 脱出候補を確認</small></div>
+          </div>
+          <div class="priority-row">
+            <span class="priority-no">02</span>
+            <div><strong>銃より弾を見る</strong><small>同じ銃でも弾で対装甲性能が大きく変わる</small></div>
+          </div>
+          <div class="priority-row">
+            <span class="priority-no">03</span>
+            <div><strong>SCAVを練習兼収入にする</strong><small>マップ・脱出・漁り方を低リスクで覚える</small></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="quick-answer searchable-section" data-title="死因 症状 すぐ答え">
+        <div class="section-heading">
+          <div><span class="section-kicker">QUICK DIAGNOSIS</span><h2>「なんで？」の早見表</h2></div>
+        </div>
+        <div class="diagnosis-table" role="table" aria-label="初心者のよくある疑問">
+          <div class="diagnosis-row" role="row"><strong role="cell">めっちゃ当てたのに敵が死なない</strong><span role="cell">まず弾を確認。低貫通弾を胴体の高クラス防具へ撃つと止められやすい。肉ダメージ型なら脚など非装甲部位を狙う考え方もある。</span><a href="#ammo">弾を見る →</a></div>
+          <div class="diagnosis-row" role="row"><strong role="cell">自分だけ一発で死ぬ</strong><span role="cell">頭・胸部は致命傷になりやすい。相手の弾性能、顔面など防護外、同じ角度からの再ピークも疑う。</span><a href="#combat">戦闘を見る →</a></div>
+          <div class="diagnosis-row" role="row"><strong role="cell">回復の順番が分からない</strong><span role="cell">安全確保 → 重出血 → 頭/胸部の危険HP → 骨折・黒脚など移動阻害 → 軽出血 → 通常回復、を基本線にする。</span><a href="#medical">回復を見る →</a></div>
+          <div class="diagnosis-row" role="row"><strong role="cell">どこから帰るか分からない</strong><span role="cell">2×Oでそのレイドの脱出候補を確認。PMCとSCAV、スポーン地点、条件で使える出口が変わる。</span><a href="#maps">脱出を見る →</a></div>
+        </div>
+      </section>
+
+      <section id="raid-ready" class="manual-section searchable-section" data-title="出撃前 レイド前 チェック 持ち物">
+        <div class="section-heading">
+          <div><span class="section-kicker">RAID READY</span><h2>出撃前に毎回これだけ確認</h2></div>
+          <p>最初は装備の豪華さより「必要なものを忘れない」が重要。</p>
+        </div>
+
+        <div class="check-grid">
+          <button class="check-item" type="button" data-check-id="pre-weapon"><span class="check-box"></span><span><strong>銃 + 使用できる弾</strong><small>マガジンの中身まで確認</small></span></button>
+          <button class="check-item" type="button" data-check-id="pre-mag"><span class="check-box"></span><span><strong>予備マガジン / 予備弾</strong><small>リグに入っているか</small></span></button>
+          <button class="check-item" type="button" data-check-id="pre-heavy"><span class="check-box"></span><span><strong>重出血を止める物</strong><small>CALOK-B / Esmarch など</small></span></button>
+          <button class="check-item" type="button" data-check-id="pre-heal"><span class="check-box"></span><span><strong>HP回復</strong><small>AI-2 / Car / Salewa 等</small></span></button>
+          <button class="check-item" type="button" data-check-id="pre-fracture"><span class="check-box"></span><span><strong>骨折対策</strong><small>Splint。余裕が出たら手術キットも</small></span></button>
+          <button class="check-item" type="button" data-check-id="pre-headset"><span class="check-box"></span><span><strong>ヘッドセット</strong><small>音は情報。可能なら優先</small></span></button>
+          <button class="check-item" type="button" data-check-id="pre-insure"><span class="check-box"></span><span><strong>保険</strong><small>PMCの普段使い装備は基本候補</small></span></button>
+          <button class="check-item" type="button" data-check-id="pre-map"><span class="check-box"></span><span><strong>今日の脱出を1つ見る</strong><small>全部暗記しなくていい</small></span></button>
+        </div>
+
+        <article class="callout callout-warn">
+          <div class="callout-mark">!</div>
+          <div><strong>スタッシュにある弾と、銃に入る弾は別問題。</strong><p>口径が同じでも弾種ごとの性能差が大きい。初心者のうちは「この銃ならこの弾」とセットで覚える。</p></div>
+        </article>
+      </section>
+
+      <section id="medical" class="manual-section searchable-section" data-title="回復 医療 出血 重出血 軽出血 骨折 CMS Surv12 黒足">
+        <div class="section-heading">
+          <div><span class="section-kicker">MEDICAL</span><h2>回復は「症状ごと」に分ける</h2></div>
+          <button class="mastery-button" type="button" data-check-id="learn-medical">覚えた</button>
+        </div>
+
+        <div class="medical-priority">
+          <div class="medical-step"><span>1</span><div><strong>重出血</strong><p>放置すると全身からHPが減る。まず止血。</p></div></div>
+          <div class="medical-step"><span>2</span><div><strong>頭 / 胸部の危険HP</strong><p>致命傷になりやすい部位。安全なら早く戻す。</p></div></div>
+          <div class="medical-step"><span>3</span><div><strong>骨折・黒脚・黒腕</strong><p>移動や操作に大きく影響。手術キットは頭・胸部以外の破壊部位を戻せる。</p></div></div>
+          <div class="medical-step"><span>4</span><div><strong>軽出血 / 通常HP</strong><p>緊急度が低いものを落ち着いて処理。</p></div></div>
+        </div>
+
+        <div class="info-grid two-col">
+          <article class="info-block"><h3>黒くなった部位</h3><p>HPが0になった部位。腕・脚・腹部などはCMS/Surv12で復旧できるが、復旧後の最大HPは下がる。頭・胸部は手術で直せない。</p></article>
+          <article class="info-block"><h3>痛み止め</h3><p>骨折や黒脚でも一時的に動きやすくする「応急処置」。根本治療ではない。水分など副作用も確認する。</p></article>
+          <article class="info-block"><h3>レイド後の治療</h3><p>低レベル・少ないレイド数の間はTherapistの治療が無料になる条件がある。初心者期間は積極的に利用。</p></article>
+          <article class="info-block"><h3>戦闘中は全部治さない</h3><p>敵が近いなら長い回復モーションが死因になる。まず遮蔽・距離・角度を作る。</p></article>
+        </div>
+      </section>
+
+      <section id="ammo" class="manual-section searchable-section" data-title="弾 ammo 貫通 penetration armor 防具 アーマー ダメージ">
+        <div class="section-heading">
+          <div><span class="section-kicker">AMMO & ARMOR</span><h2>タルコフは「銃より弾」が重要</h2></div>
+          <button class="mastery-button" type="button" data-check-id="learn-ammo">覚えた</button>
+        </div>
+
+        <div class="ammo-lesson">
+          <div class="lesson-axis"><span>低貫通 / 高肉ダメ</span><div class="axis-line"></div><span>高貫通 / 対装甲</span></div>
+          <div class="lesson-copy">
+            <p><strong>貫通力</strong>は防具を抜けるかに関わり、<strong>ダメージ</strong>は通った後にどれだけHPを削るかに関わる。どちらか片方だけ見ない。</p>
+            <p>防具は「防具クラス」だけでなく、<strong>守っている部位・プレート・耐久</strong>も重要。顔や脇など、防具が覆っていない箇所は別。</p>
+          </div>
+        </div>
+
+        <div class="rule-list">
+          <div><span class="rule-tag">RULE 1</span><p><strong>拾った弾を名前だけで強いと思わない。</strong>ライブの弾薬表で貫通・ダメージを確認する。</p></div>
+          <div><span class="rule-tag">RULE 2</span><p><strong>弱い弾で高クラス胴体へ撃ち続けない。</strong>その弾が肉ダメ型なら脚などの非装甲部位へ戦い方を変える。</p></div>
+          <div><span class="rule-tag">RULE 3</span><p><strong>高い銃 = 強いではない。</strong>扱いやすい銃 + 入手しやすいまともな弾の組み合わせを優先。</p></div>
+        </div>
+
+        <a class="resource-link" href="https://escapefromtarkov.fandom.com/wiki/Ammunition" target="_blank" rel="noreferrer"><span>LIVE RESOURCE</span><strong>公式Wikiの弾薬一覧を開く</strong><small>アップデートで数値が変わるので、具体的な弾性能はここで最終確認。</small></a>
+      </section>
+
+      <section id="combat" class="manual-section searchable-section" data-title="戦闘 撃ち合い 音 足音 ピーク 射撃 エイム">
+        <div class="section-heading">
+          <div><span class="section-kicker">COMBAT BASICS</span><h2>撃ち合いは「先に情報を取る」</h2></div>
+          <button class="mastery-button" type="button" data-check-id="learn-combat">覚えた</button>
+        </div>
+
+        <div class="combat-grid">
+          <article><span>01</span><h3>音を止めて聞く</h3><p>走り続けると自分の音で敵の音を消す。危険エリア前は速度を落とし、数秒聞く。</p></article>
+          <article><span>02</span><h3>同じ場所から再ピークしない</h3><p>一度見られた角度は相手が照準を置いている可能性が高い。位置をずらす。</p></article>
+          <article><span>03</span><h3>フルオートだけに頼らない</h3><p>距離があるなら単発・短い連射で命中を優先。近距離は射撃モードの確認を忘れない。</p></article>
+          <article><span>04</span><h3>死亡画面を1つだけ復習</h3><p>毎回全部反省しない。「弾」「角度」「音」「脱出」のどれで死んだか1つだけ残す。</p></article>
+        </div>
+
+        <article class="callout">
+          <div class="callout-mark">→</div>
+          <div><strong>初心者の目標はキル数ではなく「自分が何で死んだか分かる」こと。</strong><p>死因が分かれば、次の1レイドで直す項目を1つに絞れます。</p></div>
+        </article>
+      </section>
+
+      <section id="maps" class="manual-section searchable-section" data-title="マップ 脱出 extract Customs Woods Ground Zero Factory 2xO">
+        <div class="section-heading">
+          <div><span class="section-kicker">MAPS & EXTRACTS</span><h2>マップは全部覚えなくていい</h2></div>
+          <button class="mastery-button" type="button" data-check-id="learn-extract">覚えた</button>
+        </div>
+
+        <div class="extract-banner">
+          <kbd>O</kbd><span>→ レイド残り時間</span><kbd>O × 2</kbd><span>→ 現在使える脱出候補</span>
+        </div>
+
+        <div class="map-plan">
+          <div class="map-stage active"><span>STEP 1</span><strong>Ground Zero</strong><p>方向感覚と「脱出まで帰る」練習。まず目印を3つだけ覚える。</p><a href="https://tarkovwiki.com/maps/ground-zero" target="_blank" rel="noreferrer">インタラクティブマップ</a></div>
+          <div class="map-stage"><span>STEP 2</span><strong>Customs</strong><p>今後も使う場面が多い。大きなランドマークと反対側の主要脱出を覚える。</p><a href="https://tarkovwiki.com/maps/customs" target="_blank" rel="noreferrer">インタラクティブマップ</a></div>
+          <div class="map-stage"><span>STEP 3</span><strong>Woods</strong><p>迷いやすいので、山・道路・送電線など地形基準で位置を取る練習。</p><a href="https://tarkovwiki.com/maps/woods" target="_blank" rel="noreferrer">インタラクティブマップ</a></div>
+          <div class="map-stage"><span>LATER</span><strong>Factory / Streets 等</strong><p>タスクや目的に合わせて追加。最初から全マップ暗記しない。</p><a href="https://tarkovwiki.com/maps" target="_blank" rel="noreferrer">全マップ</a></div>
+        </div>
+
+        <div class="mini-rules">
+          <p><strong>スポーンした瞬間に2×O。</strong>出口名を見てからマップを開く。</p>
+          <p><strong>PMCとSCAVで出口は同じとは限らない。</strong>毎レイド確認。</p>
+          <p><strong>「?」付き・車・Co-opなど条件付き脱出がある。</strong>知らない出口を本命1つにしない。</p>
+        </div>
+      </section>
+
+      <section id="scav" class="manual-section searchable-section" data-title="SCAV PMC スカブ カルマ Fence reputation 金策">
+        <div class="section-heading">
+          <div><span class="section-kicker">SCAV / PMC</span><h2>初心者は役割を分けると楽</h2></div>
+          <button class="mastery-button" type="button" data-check-id="learn-scav">覚えた</button>
+        </div>
+
+        <div class="compare-table">
+          <div class="compare-head"><span></span><strong>PMC</strong><strong>SCAV</strong></div>
+          <div><span>主目的</span><p>タスク・レベル・装備持ち込み</p><p>金策・マップ練習・物資回収</p></div>
+          <div><span>死亡</span><p>持ち込み装備を失う可能性</p><p>自分のスタッシュ装備は失わない</p></div>
+          <div><span>最初の使い方</span><p>目的を1つ決めて短めに</p><p>出口と漁りルートの練習</p></div>
+        </div>
+
+        <article class="callout callout-warn">
+          <div class="callout-mark">!</div>
+          <div><strong>Player SCAVで、見つけたSCAVをとりあえず撃たない。</strong><p>友好的なSCAVを倒すとFence reputation（Scav Karma）が下がる。通常のSCAV脱出は+0.01、Player SCAV撃破は大きなマイナスになり得る。</p></div>
+        </article>
+      </section>
+
+      <section id="economy" class="manual-section searchable-section" data-title="金策 保険 insurance secure container flea market フリマ found in raid FIR スタッシュ">
+        <div class="section-heading">
+          <div><span class="section-kicker">ECONOMY</span><h2>「高そう」より「帰れる」を優先</h2></div>
+          <button class="mastery-button" type="button" data-check-id="learn-economy">覚えた</button>
+        </div>
+
+        <div class="economy-lines">
+          <article><h3>Secure Container</h3><p>中のアイテムは死亡しても失わない。高価品や必要アイテムの避難先。ただしFound in Raid状態などは別条件がある。</p></article>
+          <article><h3>Found in Raid</h3><p>多くのタスクで必要。基本はレイドで見つけ、Survivedで持ち帰る。Run Throughなどでは条件を失う。目安は200 EXP以上、または7分以上。</p></article>
+          <article><h3>Insurance</h3><p>誰にも持ち帰られなかった保険対象装備が後で戻る仕組み。普段使いのPMC装備は初心者ほど利用価値が高い。</p></article>
+          <article><h3>Flea Market</h3><p>現在はPMCレベル15から基本アクセス。1.0ではカテゴリごとの追加レベル制限もあるため、「15で何でも買える」わけではない。</p></article>
+        </div>
+
+        <div class="sell-rule"><strong>初心者の売却ルール</strong><p>用途が分からない物は、まず「タスク / Hideoutで近いうちに必要か」を検索。全部抱え込むとスタッシュが詰まるので、低価値・再入手しやすい物から処分。</p></div>
+      </section>
+
+      <section id="settings" class="manual-section searchable-section" data-title="設定 graphics FPS visibility postfx RTX 4060 10900K 48GB Windows 11">
+        <div class="section-heading">
+          <div><span class="section-kicker">YOUR SETTINGS</span><h2>視認性と安定FPSを優先した設定</h2></div>
+          <button class="mastery-button" type="button" data-check-id="learn-settings">設定した</button>
+        </div>
+
+        <div class="pc-strip">
+          <span>CPU <strong>i9-10900K</strong></span>
+          <span>GPU <strong>RTX 4060 8GB</strong></span>
+          <span>RAM <strong>約48GB</strong></span>
+          <span>OS <strong>Windows 11</strong></span>
+        </div>
+        <p class="muted-note">モニター解像度が未確定なので、1080p / 1440pの両方を載せています。設定は万能値ではなく、同じルートでFPSと見え方を比較するための基準です。</p>
+
+        <div class="settings-grid">
+          <div class="setting-row"><span>Screen Mode</span><strong>Fullscreen</strong><small>Alt+Tab重視ならBorderlessも可</small></div>
+          <div class="setting-row"><span>Resolution</span><strong>モニターのネイティブ</strong><small>視認性を落とすためだけの低解像度化は避ける</small></div>
+          <div class="setting-row"><span>VSync</span><strong>Off</strong><small>遅延を抑える基準</small></div>
+          <div class="setting-row"><span>Texture Quality</span><strong>High → stutter時 Medium</strong><small>4060 8GBなのでVRAM使用量を見て調整</small></div>
+          <div class="setting-row"><span>Shadows</span><strong>Low</strong><small>まず削る候補</small></div>
+          <div class="setting-row"><span>Object LOD</span><strong>2.0–2.5</strong><small>CPU負荷と遠景のバランス</small></div>
+          <div class="setting-row"><span>Overall Visibility</span><strong>1000–1500</strong><small>初心者はまず1500以下で安定性優先</small></div>
+          <div class="setting-row"><span>HBAO / SSR</span><strong>Off</strong><small>対人視認に対してコストが高め</small></div>
+          <div class="setting-row"><span>Anisotropic Filtering</span><strong>On</strong><small>斜めの床や遠景テクスチャを読みやすく</small></div>
+          <div class="setting-row"><span>NVIDIA Reflex</span><strong>On</strong><small>まずOn。Boostは実測で比較</small></div>
+          <div class="setting-row"><span>1080p AA</span><strong>TAA系から開始</strong><small>DLSSでぼやけるならネイティブ優先</small></div>
+          <div class="setting-row"><span>1440p Upscale</span><strong>DLSS Qualityを比較</strong><small>FPS不足時の候補。スコープの見え方も確認</small></div>
+          <div class="setting-row"><span>Head Bobbing</span><strong>低め</strong><small>画面揺れを抑えて情報を読みやすく</small></div>
+          <div class="setting-row"><span>Health condition</span><strong>Always shown</strong><small>出血の見落としを減らす</small></div>
+        </div>
+
+        <article class="callout">
+          <div class="callout-mark">TEST</div>
+          <div><strong>設定は一気に10個変えない。</strong><p>同じマップ・同じ5分ルートで「屋外 → 屋内 → ADS/スコープ → AI接触」を通り、1〜2項目ずつ比較。10900K + RTX 4060ではGPUだけ下げてもCPU側がボトルネックならFPSが伸びないことがあります。</p></div>
+        </article>
+      </section>
+
+      <section id="controls" class="manual-section searchable-section" data-title="操作 キー O Delete Alt T L Shift T CapsLock Ctrl click reload">
+        <div class="section-heading">
+          <div><span class="section-kicker">KEYBINDS</span><h2>最初に覚える操作だけ</h2></div>
+          <button class="mastery-button" type="button" data-check-id="learn-controls">覚えた</button>
+        </div>
+
+        <div class="key-list">
+          <div><kbd>O × 2</kbd><span><strong>脱出一覧</strong><small>最重要。毎レイド最初に押す</small></span></div>
+          <div><kbd>Alt + T</kbd><span><strong>残弾確認</strong><small>だいたいの弾数と上の弾を確認</small></span></div>
+          <div><kbd>Alt + B</kbd><span><strong>射撃モード確認</strong><small>近距離前にフルオート確認</small></span></div>
+          <div><kbd>L</kbd><span><strong>武器を調べる</strong><small>動作不良の特定にも使用</small></span></div>
+          <div><kbd>Shift + T</kbd><span><strong>チャンバー確認 / 動作不良対処</strong><small>不発時はまずLで特定後</small></span></div>
+          <div><kbd>Delete</kbd><span><strong>アイテムを捨てる</strong><small>漁りを速くする。スタッシュでは破棄に注意</small></span></div>
+          <div><kbd>Ctrl + Click</kbd><span><strong>アイテム移動</strong><small>ドラッグを減らして漁り高速化</small></span></div>
+          <div><kbd>Alt + Click</kbd><span><strong>装備を着る</strong><small>装備スロットへ素早く移動</small></span></div>
+          <div><kbd>Caps Lock</kbd><span><strong>最低移動速度へ切替</strong><small>聞きたい時にすぐ静かにする</small></span></div>
+          <div><kbd>2 × R</kbd><span><strong>クイックリロード</strong><small>マガジンを地面へ落とすので緊急時だけ</small></span></div>
+        </div>
+      </section>
+
+      <section id="terms" class="manual-section searchable-section" data-title="用語 glossary FIR KIA MIA run through ergo recoil scav karma PMC">
+        <div class="section-heading">
+          <div><span class="section-kicker">GLOSSARY</span><h2>最低限の用語</h2></div>
+        </div>
+        <dl class="terms-grid">
+          <div><dt>PMC</dt><dd>自分の本体キャラ。装備持ち込み・タスク・経験値進行の中心。</dd></div>
+          <div><dt>SCAV</dt><dd>別装備で入る低リスク枠。金策・マップ練習に便利。</dd></div>
+          <div><dt>FIR</dt><dd>Found in Raid。タスク等で要求されることがある状態。</dd></div>
+          <div><dt>Run Through</dt><dd>十分な経験/時間を満たさず早く抜けた状態。FIRに影響。</dd></div>
+          <div><dt>Pen</dt><dd>Penetration。弾の貫通性能。</dd></div>
+          <div><dt>Flesh</dt><dd>肉ダメージ。非装甲部位への削り性能。</dd></div>
+          <div><dt>Ergo</dt><dd>Ergonomics。構えやADSの扱いやすさに関わる。</dd></div>
+          <div><dt>Scav Karma</dt><dd>Fence reputation。Player SCAV行動に影響する評判。</dd></div>
+        </dl>
+      </section>
+
+      <section class="next-stage searchable-section" data-title="次 中級 目標 progression">
+        <div class="next-copy">
+          <span class="section-kicker">NEXT STAGE</span>
+          <h2>この基礎ができたら次へ</h2>
+          <p>「主要脱出を迷わない」「重出血を即処理できる」「使う弾の役割が分かる」「SCAVで安定して帰れる」まで来たら、次はタスク導線・武器ビルド・トレーダー育成・マップ別PvPへ進む。</p>
+        </div>
+        <div class="next-checks">
+          <button class="check-item compact" type="button" data-check-id="goal-extract"><span class="check-box"></span><span><strong>脱出で迷わない</strong></span></button>
+          <button class="check-item compact" type="button" data-check-id="goal-med"><span class="check-box"></span><span><strong>回復の優先順が分かる</strong></span></button>
+          <button class="check-item compact" type="button" data-check-id="goal-ammo"><span class="check-box"></span><span><strong>弾を見て選べる</strong></span></button>
+          <button class="check-item compact" type="button" data-check-id="goal-scav"><span class="check-box"></span><span><strong>SCAVで安定生還</strong></span></button>
+        </div>
+      </section>
+
+      <section class="sources searchable-section" data-title="出典 source 更新">
+        <div class="section-heading"><div><span class="section-kicker">SOURCES</span><h2>確認に使った主な情報源</h2></div></div>
+        <p>ゲーム更新で数値・条件・マップは変わります。具体値はリンク先の最新版を優先してください。設定値は公式仕様ではなく、2026年の複数ガイドを突き合わせた「開始点」です。</p>
+        <ul>
+          <li><a href="https://escapefromtarkov.fandom.com/wiki/Escape_from_Tarkov_Wiki" target="_blank" rel="noreferrer">Official Escape from Tarkov Wiki — current version</a></li>
+          <li><a href="https://escapefromtarkov.fandom.com/wiki/Controls" target="_blank" rel="noreferrer">Official Wiki — Controls</a></li>
+          <li><a href="https://escapefromtarkov.fandom.com/wiki/Health_system" target="_blank" rel="noreferrer">Official Wiki — Health system</a></li>
+          <li><a href="https://escapefromtarkov.fandom.com/wiki/Ballistics" target="_blank" rel="noreferrer">Official Wiki — Ballistics</a></li>
+          <li><a href="https://escapefromtarkov.fandom.com/wiki/Scavs" target="_blank" rel="noreferrer">Official Wiki — Scavs / Karma</a></li>
+          <li><a href="https://escapefromtarkov.fandom.com/wiki/Insurance" target="_blank" rel="noreferrer">Official Wiki — Insurance</a></li>
+          <li><a href="https://escapefromtarkov.fandom.com/wiki/Found_in_raid" target="_blank" rel="noreferrer">Official Wiki — Found in Raid</a></li>
+          <li><a href="https://tarkovwiki.com/maps" target="_blank" rel="noreferrer">TarkovWiki — interactive maps</a></li>
+          <li><a href="https://roguewiki.com/escape-from-tarkov/guides/escape-from-tarkov-settings" target="_blank" rel="noreferrer">RogueWiki — 2026 graphics/settings guide</a></li>
+        </ul>
+        <div class="source-foot">Fan-made personal guide. Escape from Tarkov / Battlestate Games とは非公式・非提携です。</div>
+      </section>
+
+      <div class="no-results" id="no-results" hidden>
+        <strong>該当する項目がありません。</strong>
+        <span>別の言葉で検索してください。</span>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <span>Tarkov Field Manual</span>
+    <span>Guide data checked: 2026-08-31</span>
+  </footer>
+
+  <script src="assets/app.js" defer></script>
+</body>
+</html>
